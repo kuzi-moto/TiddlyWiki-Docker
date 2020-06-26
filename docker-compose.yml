@@ -1,0 +1,9 @@
+version: "3"
+
+services:
+  tiddlywiki:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - data:/wiki
