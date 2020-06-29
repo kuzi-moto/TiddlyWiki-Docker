@@ -1,10 +1,9 @@
 FROM node:14-alpine3.12
 
+
 VOLUME [ "/wiki" ]
 
-RUN npm install -g tiddlywiki
-COPY ["tiddlywiki.info", "/wiki"]
-
+ENV TW_VERSON=5.1.21
 ENV TW_HOST=0.0.0.0
 ENV TW_PATH_PREFIX=
 ENV TW_PORT=8080
@@ -14,6 +13,9 @@ ENV TW_AUTHENTICATED_USER_HEADER=
 ENV TW_READERS=
 ENV TW_WRITERS=
 ENV TW_DEBUG_LEVEL=none
+
+RUN npm install -g tiddlywiki@${TW_VERSION}
+COPY ["tiddlywiki.info", "/wiki"]
 
 EXPOSE 8080
 

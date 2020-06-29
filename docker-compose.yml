@@ -2,13 +2,13 @@ version: "3"
 
 services:
   tiddlywiki:
-    build: .
+    image: kuzimoto\tiddlywiki
     ports:
-      - "8082:8080"
-#    volumes:
-#      - data:/wiki
+      - "8080:8080"
+    volumes:
+      - data:/wiki
     environment:
-      TW_HOST: "127.0.0.1"
+      TW_DEBUG_LEVEL: debug
 
-#volumes:
-#  data:
+volumes:
+  data:
