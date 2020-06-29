@@ -4,6 +4,11 @@ services:
   tiddlywiki:
     build: .
     ports:
-      - "8080:8080"
-    volumes:
-      - data:/wiki
+      - "8082:8080"
+#    volumes:
+#      - data:/wiki
+    environment:
+      TW_HOST: "127.0.0.1"
+
+#volumes:
+#  data:
