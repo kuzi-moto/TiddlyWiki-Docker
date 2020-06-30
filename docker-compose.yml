@@ -2,9 +2,12 @@ version: "3"
 
 services:
   tiddlywiki:
-    build: .
+    image: kuzimoto/tiddlywiki
     ports:
       - "8080:8080"
+    #environment:
+    #  TW_USERNAME: "admin"
+    #  TW_PASSWORD: "password"
     volumes:
       - data:/wiki
 
